@@ -5,3 +5,7 @@
 body {
   @apply text-gray-800;
 }
+
+figcaption, span{
+  text-transform: capitalize;
+}

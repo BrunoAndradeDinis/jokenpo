@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import {Mulish} from "next/font/google";
+import { Mulish } from "next/font/google";
 import "./globals.css";
+import Header from "./_containers/Header";
 
 const mulish = Mulish({
   subsets: ["latin"],
-  display: "swap"
+  display: "swap",
 });
-
 
 export const metadata: Metadata = {
   title: "Jokenpô - Pedra, Papel e Tesoura",
@@ -20,9 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${mulish.className} antialiased flex flex-col `}
-      >
+      <body className={`${mulish.className} antialiased flex flex-col `}>
+        <Header />
         {children}
       </body>
     </html>
