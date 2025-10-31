@@ -3,16 +3,15 @@ interface ResultProps {
 }
 const ResultComponent = ({ result }: ResultProps) => {
   return (
-    <div className="text-center mt-6 mb-2">
+    <div className="result">
       <h2
-        // className="text-green-600"
-        className={
+        className={`${
           result === "vitória"
-            ? "text-green-600"
+            ? "result__text--win"
             : result === "derrota"
-            ? "text-red-600"
-            : "text-gray-600"
-        }
+            ? "result__text--lose"
+            : "result__text--draw"
+        } result__text`}
       >
         {result === "vitória"
           ? "Você ganhou!"
@@ -20,6 +19,7 @@ const ResultComponent = ({ result }: ResultProps) => {
           ? "Você perdeu!"
           : "Empate!"}
       </h2>
+      {result === "derrota" && <strong className="result__text-super">SUPER!</strong>}
     </div>
   );
 };

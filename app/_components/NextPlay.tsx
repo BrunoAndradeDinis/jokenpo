@@ -1,15 +1,14 @@
+import ChoiseButton from "./ChoiceButton";
 
-import ChooseButton from "./ChooseButton";
-
-const NextPlayedComponent = () => {
+const NextPlay = () => {
   const choice = ["pedra", "papel", "Tesoura"];
   return (
-    <section className="flex justify-center gap-6 mt-4 mb-6 flex-wrap">
+    <section className="next-play">
       {choice.map((choose) => (
-        <ChooseButton choose={choose} key={choose} />
+        <ChoiseButton choose={choose} key={choose} />
       ))}
     </section>
   );
 };
 
-export default NextPlayedComponent;
+export default NextPlay;

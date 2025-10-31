@@ -5,9 +5,9 @@ interface PlayerProps {
   choice: string;
 }
 
-const PlayerGameComponent = ({ playerImg, choice }: PlayerProps) => {
+const PlayerGame = ({ playerImg, choice }: PlayerProps) => {
   return (
-    <div className="bg-white text-gray-800 rounded-2xl px-6 py-4 flex flex-col items-center shadow-md relative">
+    <div className="player ">
       {playerImg === "player" ? (
         <Image
           src={`/${playerImg}.png`}
@@ -15,7 +15,7 @@ const PlayerGameComponent = ({ playerImg, choice }: PlayerProps) => {
           height={42}
           alt="Jogador"
           title="Foto logo dos chapéus de palha"
-          className={"absolute -top-3 -left-2"}
+          className={"player__avatar-left"}
         />
       ) : (
         <Image
@@ -24,7 +24,7 @@ const PlayerGameComponent = ({ playerImg, choice }: PlayerProps) => {
           height={42}
           alt="Computador"
           title="Foto logo do Franky"
-          className="absolute -top-5 -right-2"
+          className="player__avatar-right"
         />
       )}
       <figure>
@@ -35,10 +35,12 @@ const PlayerGameComponent = ({ playerImg, choice }: PlayerProps) => {
           width={50}
           height={50}
         />
-        <figcaption className="mt-2 font-medium">{choice}</figcaption>
+        <figcaption className="player__caption-text">
+          {choice}
+        </figcaption>
       </figure>
     </div>
   );
 };
 
-export default PlayerGameComponent;
+export default PlayerGame;
