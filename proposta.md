@@ -38,7 +38,7 @@ Fornecemos um **Guia Visual** para auxiliar na estruturação e disposição das
 
 
 ### Tasks
-[🔰] - Estrutura inicial
+[✅] - Estrutura inicial
 - Components: Header, main, footer
 - Área do jogo: Jogador vs computer, botão de interação
 - Placar do jogo: placar/resultado
@@ -48,7 +48,7 @@ Fornecemos um **Guia Visual** para auxiliar na estruturação e disposição das
       - Mensagem de retorno da vitória
 - Botão de reiniciar a partida
 
-[...]- Lógica e estado do jogo
+[✅]- Lógica e estado do jogo
 - Definição de regras do jogo
   - Aplicar lógica de Vitória, Derrata e Empate
     - Pedra ganha de Tesoura.
