@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
-import Header from "./_containers/Header";
+import Header from "./containers/Header";
 
 const mulish = Mulish({
   subsets: ["latin"],

@@ -129,10 +129,6 @@ span {
     color: var(--gray-event);
   }
 
-  .result__text-super {
-    @apply text-green-300 animate-pulse text-2xl;
-  }
-
   .next-play {
     @apply flex justify-center gap-4 mt-4 mb-6 flex-wrap p-6;
   }
@@ -142,8 +138,19 @@ span {
     color: var(--white);
   }
 
+  .btn-win {
+    border-color: var(--green-event);
+  }
+  .btn-lose {
+    border-color: var(--red-event);
+  }
+  .btn-draw {
+    border-color: var(--gray-event);
+  }
+
   .btn-choice__label {
     @apply mt-2 font-medium;
+    color: var(--gray-default);
   }
 
   .reset {
@@ -158,5 +165,13 @@ span {
 
   .reset__button:hover {
     background-color: var(--blue-default);
+  }
+
+  .computer-wait {
+    @apply animate-pulse;
+  }
+
+  .is-disabled {
+    @apply pointer-events-none opacity-60;
   }
 }
