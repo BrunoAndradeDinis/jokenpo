@@ -3,25 +3,175 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --blue-default: #2563eb;
+  --blue-dark: #1d4ed8;
+  --gradient-blue: linear-gradient(to right, var(--blue-dark), #3b82f6);
+  --red-event: #ef4444;
+  --green-event: #16a34a;
+  --gray-event: #4b5563;
+  --gray-muted: #374151;
+  --gray-default: #1f2937;
+  --white: #fff5f5;
+  --shadow-xl: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--gray-default);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+figcaption,
+span {
+  text-transform: capitalize;
+}
+
+@layer components {
+  .header {
+    @apply w-full flex items-center justify-start px-8 py-4 shadow-md gap-2;
+  }
+
+  .header__title {
+    @apply text-lg font-bold;
+  }
+
+  .main {
+    @apply max-w-4xl mx-auto py-10 flex flex-col items-center justify-center px-4;
+  }
+
+  .main__section {
+    @apply w-full max-w-3xl rounded-3xl shadow-xl overflow-hidden;
+  }
+
+  .main__section-text {
+    @apply text-center my-2 pt-1;
+    color: var(--gray-muted);
+  }
+
+  .game-section {
+    @apply p-6 flex flex-col md:flex-row justify-between items-center gap-6;
+    color: var(--white);
+    background: var(--gradient-blue);
+  }
+
+  .game-section__content {
+    @apply w-full flex items-center justify-center gap-1;
+  }
+
+  .game-section__content-text {
+    @apply text-3xl font-bold;
+  }
+
+  .player {
+    @apply rounded-2xl px-6 py-4 flex flex-col items-center shadow-md relative min-w-[108px];
+    background-color: var(--white);
+    color: var(--gray-default);
+  }
+
+  .player__avatar-left {
+    @apply absolute -top-3 -left-2;
+  }
+
+  .player__avatar-right {
+    @apply absolute -top-3 absolute -top-5 -right-2;
+  }
+
+  .player__caption-text {
+    @apply mt-2 font-medium;
+  }
+
+  .score-board {
+    @apply rounded-2xl p-4 text-center shadow-md min-w-[140px];
+    background-color: var(--white);
+    color: var(--gray-default);
+  }
+
+  .score-board__title {
+    @apply font-semibold mb-2;
+    color: var(--blue-dark);
+  }
+
+  .score-board__players-container {
+    @apply flex justify-around;
+  }
+
+  .score-board__players-container__content {
+    @apply flex flex-col items-center;
+  }
+
+  .score-board__players-container__content-score-win {
+    @apply font-semibold;
+    color: var(--blue-default);
+  }
+  .score-board__players-container__content-score-lose {
+    @apply font-semibold;
+    color: var(--red-event);
+  }
+  .score-board__players-container__content-score-draw {
+    @apply text-sm mt-1 font-semibold;
+    color: var(--gray-event);
+  }
+
+  .result {
+    @apply text-center mt-6 mb-2;
+  }
+
+  .result__text {
+    @apply text-lg font-bold;
+  }
+
+  .result__text--win {
+    color: var(--green-event);
+  }
+  .result__text--lose {
+    color: var(--red-event);
+  }
+  .result__text--draw {
+    color: var(--gray-event);
+  }
+
+  .next-play {
+    @apply flex justify-center gap-4 mt-4 mb-6 flex-wrap p-6;
+  }
+
+  .btn-choice {
+    @apply flex flex-col items-center justify-center shadow-md rounded-2xl px-6 py-4 hover:shadow-lg transition border-4;
+    color: var(--white);
+  }
+
+  .btn-win {
+    border-color: var(--green-event);
+  }
+  .btn-lose {
+    border-color: var(--red-event);
+  }
+  .btn-draw {
+    border-color: var(--gray-event);
+  }
+
+  .btn-choice__label {
+    @apply mt-2 font-medium;
+    color: var(--gray-default);
+  }
+
+  .reset {
+    @apply flex justify-center pb-6;
+  }
+
+  .reset__button {
+    @apply font-semibold px-6 py-2 rounded-full transition;
+    color: var(--white);
+    background-color: var(--blue-dark);
+  }
+
+  .reset__button:hover {
+    background-color: var(--blue-default);
+  }
+
+  .computer-wait {
+    @apply animate-pulse;
+  }
+
+  .is-disabled {
+    @apply pointer-events-none opacity-60;
   }
 }
