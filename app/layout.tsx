@@ -11,6 +11,9 @@ const mulish = Mulish({
 export const metadata: Metadata = {
   title: "Jokenpô - Pedra, Papel e Tesoura",
   description: "Jogo de joken pô VS Computador, vai encarar?",
+  icons: {
+    icon: "./favicon.ico",
+  },
 };
 
 export default function RootLayout({
