@@ -32,7 +32,7 @@ const PlayerGame = ({ playerImg, choice, className = "" }: PlayerProps) => {
         {choice ? (
           <>
             <Image
-              src={`/${choice}.png`}
+              src={`/${className ? "logo" : choice}.png`}
               alt={`${choice}`}
               title={`${choice}`}
               width={50}

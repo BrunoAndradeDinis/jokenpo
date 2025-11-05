@@ -46,18 +46,19 @@ const Main = () => {
       const decideResult = decideWinner(normalized, computer);
 
       setPlayerChoice(normalized);
+      setComputerChoice(null); 
+      setResult(null);
       setIsWaiting(true);
       setTimeout(() => {
         setComputerChoice(computer);
         setResult(decideResult);
         setIsWaiting(false);
+        setScore((prev) => ({
+          win: prev.win + (decideResult === "vitória" ? 1 : 0),
+          lose: prev.lose + (decideResult === "derrota" ? 1 : 0),
+          draw: prev.draw + (decideResult === "empate" ? 1 : 0),
+        }));
       }, 1000);
-
-      setScore((prev) => ({
-        win: prev.win + (decideResult === "vitória" ? 1 : 0),
-        lose: prev.lose + (decideResult === "derrota" ? 1 : 0),
-        draw: prev.draw + (decideResult === "empate" ? 1 : 0),
-      }));
     },
     [decideWinner, getComputerChoice]
   );
@@ -80,7 +81,7 @@ const Main = () => {
           score={score}
           waiting={isWaiting}
         />
-        <ResultComponent result={resultText ?? "empate"} />
+        <ResultComponent result={resultText ?? ""} />
         <div className="main__section-text">
           <p>Faça sua próxima jogada:</p>
         </div>
